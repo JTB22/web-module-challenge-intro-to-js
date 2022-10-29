@@ -20,6 +20,12 @@ Do the following:
    HINT: no function required
 */
 
+const votingAge = 22;
+if (votingAge => 18) {
+  console.log('true');
+}
+
+
 
 
 /*
@@ -35,7 +41,12 @@ Do the following:
 */
 
 
-
+let firstThing = 1;
+let secondThing = 2;
+if (firstThing <= secondThing) {
+  firstThing += secondThing;
+  console.log(firstThing);
+}
 
 
 /*
