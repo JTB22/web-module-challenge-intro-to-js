@@ -60,7 +60,9 @@ Do the following:
    HINT: look up the Number method
 */
 
-
+const stringVariable = "1999";
+Number(stringVariable);
+console.log(stringVariable);
 
 
 /*
@@ -88,8 +90,8 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return age * 7;
 }
 
 
@@ -140,8 +142,29 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
         So, on this one test, the weight would be 4 pounds, and the age would be 1 years old. It's expecting your function to return a decimal number of 0.2
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(weight,age){
+  const weightDec = weight/100;
+  let howMuch = 0;
+  if (age < 1) {
+    const months = age * 12;
+      if (months <= 4) {
+        howMuch = weightDec * 10.00;
+      } else if (months <= 7) {
+        howMuch = weightDec * 5.00;
+      } else {
+        howMuch = weightDec * 4.00;
+      }
+  } else if (weight <= 5) {
+    howMuch = weightDec * 5;
+  } else if (weight <= 10) {
+    howMuch = weightDec * 4;
+  } else if (weight <= 15) {
+    howMuch = weightDec * 3;
+    howMuch = Number(howMuch.toFixed(2));
+  } else {
+    howMuch = weightDec * 2;
+  }
+  return howMuch;
 }
 
 
@@ -166,10 +189,35 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
-
-function game(user, computer){
-  /*add your code here*/
+let pcChoice = "empty";
+let pcDice = Math.random() * (3-1) + 1;
+if (pcDice = 1) {
+  pcChoice = "rock";
+} else if (pcDice = 2) {
+  pcChoice = "paper";
+} else {
+  pcChoice = "scissors";
 }
+function game(user, computer){
+  user = user.toLowerCase();
+  if (user === computer) {
+    return "it's a tie";
+  } else if (user === "rock" && computer === "paper"){
+    return "you lose!";
+  } else if (user === "rock" && computer === "scissors") {
+    return "you win!";
+  } else if (user === "paper" && computer === "rock") {
+    return "you win!";
+  } else if (user === "paper" && computer === "scissors") {
+    return "you lose!";
+  } else if (user === "scissors" && computer === "rock") {
+    return "you lose!";
+  } else if (user === "scissors" && computer === "paper") {
+    return "you win!";
+  }
+  }
+
+
 
 
 
